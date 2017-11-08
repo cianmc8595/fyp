@@ -34,7 +34,8 @@ CODE GENERATION TOOLS:
 N/A
 
 THIRD PARTY COMPONENTS:
-N/A
+Bootstrap Template taken from following source - https://www.creative-tim.com/product/gaia-bootstrap-template
+^^Modified code indicated in file
 
 MODIFIED THID PARTY FILES:
 Although I did not use any specific third party files, I took aspects of PHP 
@@ -49,9 +50,13 @@ http://www.homeandlearn.co.uk/php
 https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection
 ^^Used aspects of lessons to read from database using prepared statements
 
+https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.phphttps://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
+^^Used aspects of this tutorial to help get my Login/Logout system working
+
 OTHER:
 Cloud 9 as IDE
 Cloud 9 supported MySQL database
 Cloud 9 supported PHPMyAdmin
-
+Just In Mind Prototyping Software
+GitHub for version control
 

@@ -6,6 +6,7 @@ $id = "";
 if (isset($_POST['Submit1'])) {
 
 $id = $_POST['id'];
+/*END*/  
 
 //Connect to the Database
 /* Code below is based on https://community.c9.io/t/connecting-php-to-mysql/1606 a post by Brady Dowling */
@@ -14,6 +15,7 @@ $user = "cianmc85";
 $pass = "";
 $db = "project_db";
 $port = 3306;
+/*END*/  
     
 // Create connection
 /* Code below is based on aspects from http://www.homeandlearn.co.uk/php and https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection */
@@ -21,17 +23,17 @@ $conn_found = new mysqli($host, $user, $pass, $db, $port);
 
 if ($conn_found) {
 
-    $SQL = $conn_found->prepare('SELECT tutorID, username, password, email, firstname, surname, pastSchool FROM tutors WHERE tutorID = ?');
+    $SQL = $conn_found->prepare('SELECT studentID, username, password, email, firstname, surname, yearInSchool, school FROM students WHERE studentID = ?');
     $SQL->bind_param('s', $id);
     $SQL->execute();
     $SQL->store_result();
 
     if ($SQL->num_rows === 1) {
 
-        $SQL->bind_result($tutorID, $username, $password, $email, $firstname, $surname, $pastSchool); 
+        $SQL->bind_result($studentID, $username, $password, $email, $firstname, $surname, $yearInSchool, $school); 
         $SQL->fetch();
 
-        
+     /*END*/  
        
   }
 
@@ -102,14 +104,14 @@ div {
 <body>
 
 <!-- Code below is based on aspects from http://www.homeandlearn.co.uk/php and https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection  -->
-<FORM NAME ="form1" METHOD ="POST" ACTION ="searchTutors.php">
+<FORM NAME ="form1" METHOD ="POST" ACTION ="searchStudents.php">
 <label for="id">Search ID: </label>
 <INPUT TYPE = 'TEXT' Name ='id' value="<?PHP print $id ; ?>">
 
-<INPUT TYPE = "Submit" Name = "Submit1" VALUE = "Search for Tutor">
+<INPUT TYPE = "Submit" Name = "Submit1" VALUE = "Search for Student">
 
 <label for="id2">ID: </label>  
-<input type="text" value="<?php echo $tutorID; ?>" />
+<input type="text" value="<?php echo $studentID; ?>" />
 <label for="uname">Username: </label>
 <input type="text" value="<?php echo $username; ?>" />
 <label for="pword">Password: </label>
@@ -120,9 +122,12 @@ div {
 <input type="text" value="<?php echo $firstname; ?>" />
 <label for="sname">Surname: </label>
 <input type="text" value="<?php echo $surname; ?>" />
-<label for="pastSchool">School: </label>
-<input type="text" value="<?php echo $pastSchool; ?>" />
+<label for="yearinschool">Subject: </label>
+<input type="text" value="<?php echo $yearInSchool; ?>" />
+<label for="school">School: </label>
+<input type="text" value="<?php echo $school; ?>" />
 
+<!-- END -->
 
 
 </FORM>

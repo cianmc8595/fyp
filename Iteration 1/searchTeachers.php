@@ -6,6 +6,7 @@ $id = "";
 if (isset($_POST['Submit1'])) {
 
 $id = $_POST['id'];
+/*END*/  
 
 //Connect to the Database
 /* Code below is based on https://community.c9.io/t/connecting-php-to-mysql/1606 a post by Brady Dowling */
@@ -14,7 +15,8 @@ $user = "cianmc85";
 $pass = "";
 $db = "project_db";
 $port = 3306;
-    
+/*END*/  
+
 // Create connection
 /* Code below is based on aspects from http://www.homeandlearn.co.uk/php and https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection */
 $conn_found = new mysqli($host, $user, $pass, $db, $port);
@@ -30,6 +32,7 @@ if ($conn_found) {
 
         $SQL->bind_result($teacherID, $username, $password, $email, $firstname, $surname, $subject, $school); 
         $SQL->fetch();
+     /*END*/  
 
   }
     
@@ -41,6 +44,7 @@ if ($conn_found) {
 
         $SQL->close();
         $conn_found->close();
+        
 
 }
 else {
@@ -122,7 +126,7 @@ div {
 <label for="school">School: </label>
 <input type="text" value="<?php echo $school; ?>" />
 
-
+<!-- END -->
 
 </FORM>
 
