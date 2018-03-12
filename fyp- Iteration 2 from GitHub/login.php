@@ -43,24 +43,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
         if ($conn_found) {
 
-            $Teacher_SQL = $conn_found->prepare('SELECT teacherID, username, password, firstname, surname FROM teachers WHERE username = ?');
+            $Teacher_SQL = $conn_found->prepare('SELECT username, password, firstname FROM teachers WHERE username = ?');
             $Teacher_SQL->bind_param('s', $TeacherUsername);
             $Teacher_SQL->execute();
             $Teacher_SQL->store_result();
             
-            $Tutor_SQL = $conn_found->prepare('SELECT tutorID, username, password, firstname, surname, email, pastSchool FROM tutors WHERE username = ?');
+            $Tutor_SQL = $conn_found->prepare('SELECT username, password, firstname FROM tutors WHERE username = ?');
             $Tutor_SQL->bind_param('s', $TutorUsername);
             $Tutor_SQL->execute();
             $Tutor_SQL->store_result();
             
-            $Student_SQL = $conn_found->prepare('SELECT studentID, username, password, email, firstname, surname, yearInSchool, school FROM students WHERE username = ?');
+            $Student_SQL = $conn_found->prepare('SELECT username, password, firstname FROM students WHERE username = ?');
             $Student_SQL->bind_param('s', $StudentUsername);
             $Student_SQL->execute();
             $Student_SQL->store_result();
 
             if ($Teacher_SQL->num_rows === 1) {
 
-                $Teacher_SQL->bind_result($retrievedTeacherID, $retrievedUsername, $retrievedPassword, $retrievedFirstname, $retrievedSurname); 
+                $Teacher_SQL->bind_result($retrievedUsername, $retrievedPassword, $retrievedFirstname); 
                 $Teacher_SQL->fetch();
                 
                 if ($retrievedUsername === $username){
@@ -69,12 +69,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         /* Password is correct, so start a new session and
                         save the username to the session */
                         session_start();
-                        $_SESSION['username'] = $retrievedUsername;
+                        $_SESSION['username'] = $retrievedFirstname;
                         $_SESSION['usertype'] = "Teacher";
-                        $_SESSION['teacherID'] = "$retrievedTeacherID";
-                        $_SESSION['firstname'] = "$retrievedFirstname";
-                        $_SESSION['surname'] = "$retrievedSurname";
-                        header("location: TeachersHome.php");
+                        header("location: welcome.php");
                         
                     }
                     else{
@@ -87,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
             elseif ($Tutor_SQL->num_rows === 1){
 
-                $Tutor_SQL->bind_result($retrievedTutorID, $retrievedUsername, $retrievedPassword, $retrievedFirstname, $retrievedSurname, $retrievedEmail, $retrievedSchool); 
+                $Tutor_SQL->bind_result($retrievedUsername, $retrievedPassword, $retrievedFirstname); 
                 $Tutor_SQL->fetch();
                 
                 if ($retrievedUsername === $username){
@@ -96,14 +93,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         /* Password is correct, so start a new session and
                         save the username to the session */
                         session_start();
-                        $_SESSION['username'] = $retrievedUsername;
-                        $_SESSION['tutorID'] = $retrievedTutorID;
-                        $_SESSION['email'] = $retrievedEmail;
-                        $_SESSION['firstname'] = $retrievedFirstname;
-                        $_SESSION['surname'] = $retrievedSurname;
-                        $_SESSION['pastSchool'] = $retrievedSchool;
-                        $_SESSION['usertype'] = "Tutor";  
-                        header("location: TutorsHome.php");
+                        $_SESSION['username'] = $retrievedFirstname;
+                        $_SESSION['usertype'] = "Tutor";
+                        header("location: welcome.php");
                         
                     }
                     else{
@@ -116,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
             elseif ($Student_SQL->num_rows === 1){
 
-                $Student_SQL->bind_result($retrievedStudentID, $retrievedUsername, $retrievedPassword, $retrievedEmail, $retrievedFirstname, $retrievedSurname, $retrievedSchoolYear, $retrievedSchool); 
+                $Student_SQL->bind_result($retrievedUsername, $retrievedPassword, $retrievedFirstname); 
                 $Student_SQL->fetch();
                 
                 if ($retrievedUsername === $username){
@@ -125,15 +117,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         /* Password is correct, so start a new session and
                         save the username to the session */
                         session_start();
-                        $_SESSION['username'] = $retrievedUsername;   
-                        $_SESSION['email'] = $retrievedEmail;
-                        $_SESSION['firstname'] = $retrievedFirstname;
-                        $_SESSION['surname'] = $retrievedSurname;
-                        $_SESSION['studentID'] = $retrievedStudentID;
-                        $_SESSION['yearInSchool'] = $retrievedSchoolYear;
-                        $_SESSION['school'] = $retrievedSchool;
+                        $_SESSION['username'] = $retrievedFirstname;   
                         $_SESSION['usertype'] = "Student";
-                        header("location: StudentsHome.php");
+                        header("location: welcome.php");
                         
                     }
                     else{
@@ -191,7 +177,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-danger" value="Login">
             </div>
-            <p>Don't have an account? <a href="registerHome.php">Sign up now</a>.</p>
         </form>
         <!-- END -->
     </div>    

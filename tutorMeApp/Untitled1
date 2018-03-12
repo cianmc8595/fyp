@@ -1,0 +1,23 @@
+<div class="login-form">
+                <div class="avatar avatar-danger">
+	                <?php
+	                    if ($_SESSION['pictureCheck'] === "True"){
+	                        echo '<img class="img-circle" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['profilePic'] ).'"/>';
+	                    }
+	                    elseif ($_SESSION['pictureCheck'] === "False"){
+	                        echo '<img class="img-circle" src="headshot.jpg"/>';
+	                    }
+	                ?>
+	            </div>
+        	</div>
+            <div class="page-header">
+                <h1>Hi, <b><?php echo $_SESSION['username']; ?></b>. You are a <b><?php echo $_SESSION['usertype']; ?></b>. Welcome to the site.</h1>
+            </div>
+            <p><a href="tutorSearch.php" class="btn btn-danger">Find a tutor</a></p>
+            <p><a href="manageAccount.php" class="btn btn-danger">Manage my Account</a></p>
+            <p><a href="tutorInbox.php" class="btn btn-danger">Inbox</a></p>
+            <p><a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a></p>
+            <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:50%;">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" value="Submit" style="width:40%; float: left; position: relative;">Register</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" value="Submit" style="width:40%; float: right; background:#008b9c; position: relative; margin-top:0px;">Return</button>
+                    </div>

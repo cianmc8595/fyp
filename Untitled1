@@ -1,0 +1,388 @@
+<div class="component">
+  <ul class="align">
+    <!-- Book 1 -->
+    <li>
+      <figure class='book'>        
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/english.jpg" alt="" width="100%" height="100%">
+            <span class="ribbon bestseller">Nº1</span>
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+          	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="English"></input>
+        	</form>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>  
+    <!-- Book 2 -->
+    <li>
+      <figure class='book'>        
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/maths.jpg" alt="" width="100%" height="100%">
+            <span class="ribbon new">NEW</span>
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Maths"></input>
+        	</form>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>
+    <!-- Book 2 -->
+    <li>
+      <figure class='book'>        
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/irish.jpg" alt="" width="100%" height="100%">
+            <span class="ribbon new">NEW</span>
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Irish"></input>
+        	</form>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li> 
+    <!-- Book 2 -->
+    <li>
+      <figure class='book'>        
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/physics.jpg" alt="" width="100%" height="100%">
+            <span class="ribbon new">NEW</span>
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li> 
+    <!-- Book 2 -->
+    <li>
+      <figure class='book'>        
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/chemistry.jpg" alt="" width="100%" height="100%">
+            <span class="ribbon new">NEW</span>
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li> 
+    <!-- Book 2 -->
+    <li>
+      <figure class='book'>        
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/biology.jpg" alt="" width="100%" height="100%">
+            <span class="ribbon new">NEW</span>
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li> 
+    <!-- Book 3 -->
+    <li>
+      <figure class='book'>       
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/french.jpg" alt="" width="100%" height="100%">
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>
+    <!-- Book 3 -->
+    <li>
+      <figure class='book'>       
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/german.jpg" alt="" width="100%" height="100%">
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>
+    <!-- Book 3 -->
+    <li>
+      <figure class='book'>       
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/geography.jpg" alt="" width="100%" height="100%">
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>
+    <!-- Book 3 -->
+    <li>
+      <figure class='book'>       
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/history.jpg" alt="" width="100%" height="100%">
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>
+    <!-- Book 3 -->
+    <li>
+      <figure class='book'>       
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/music.jpg" alt="" width="100%" height="100%">
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>
+    <!-- Book 3 -->
+    <li>
+      <figure class='book'>       
+        <!-- Front -->        
+        <ul class='hardcover_front'>
+          <li>
+            <img src="assets/img/faces/business.jpg" alt="" width="100%" height="100%">
+          </li>
+          <li></li>
+        </ul>        
+        <!-- Pages -->        
+        <ul class='page'>
+          <li></li>
+          <li>
+            <a class="btn" href="#">Download</a>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>        
+        <!-- Back -->        
+        <ul class='hardcover_back'>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class='book_spine'>
+          <li></li>
+          <li></li>
+        </ul>
+      </figure>
+    </li>
+  </ul>  
+</div>
