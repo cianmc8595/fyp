@@ -183,13 +183,13 @@ $result = $db->query("SELECT image FROM images WHERE userID = '" .$_SESSION['tut
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase" style="margin-top:7px; left:30px; height:0px;">
                     <li>
-                        <a href="NewCV.php" style="margin-top:15px;" target="_blank">Add New CV</a>
+                        <a href="NewCV.php" style="margin-top:15px;" >Add New CV</a>
                     </li>
                     <li>
-                        <a href="tutorInbox.php" style="margin-top:15px;" target="_blank">Inbox</a>
+                        <a href="tutorInbox.php" style="margin-top:15px;" >Inbox</a>
                     </li>
                     <li>
-                        <a href="manageMyCVs.php" style="margin-top:15px;" target="_blank">My CVs</a>
+                        <a href="manageMyCVs.php" style="margin-top:15px;" >My CVs</a>
                     </li>
                     <li class="dropdown" style="padding-right:35px;margin-top:-13px;">
                         <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">

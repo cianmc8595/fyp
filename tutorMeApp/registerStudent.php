@@ -339,13 +339,13 @@ elseif(isset($_POST['return'])){
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase" style="margin-top:10px;">
                     <li>
-                        <a href="LandingPage.php#login" style="margin-top:15px;" target="_blank">Login</a>
+                        <a href="LandingPage.php#login" style="margin-top:15px;" >Login</a>
                     </li>
                     <li>
-                        <a href="LandingPage.php#usertype" style="margin-top:15px;" target="_blank">Sign Up</a>
+                        <a href="LandingPage.php#usertype" style="margin-top:15px;" >Sign Up</a>
                     </li>
                     <li>
-                        <a href="LandingPage.php#features" style="margin-top:15px;" target="_blank">Features</a>
+                        <a href="LandingPage.php#features" style="margin-top:15px;" >Features</a>
                     </li>
                 </ul>
             </div>

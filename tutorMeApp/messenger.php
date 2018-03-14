@@ -747,7 +747,7 @@ if(isset($_POST['reactivateStudent']))
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase" style="margin-top:7px; left:30px; height:0px;">
                     <li>
-                        <a href="<?php echo $_SESSION['usertype']; ?>sHome.php" style="margin-top:15px;" target="_blank">Home</a>
+                        <a href="<?php echo $_SESSION['usertype']; ?>sHome.php" style="margin-top:15px;" >Home</a>
                     </li>
                     <li class="dropdown" style="padding-right:35px;margin-top:-13px;">
                         <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
@@ -938,11 +938,11 @@ if(isset($_POST['reactivateStudent']))
         						    
         						    if ($messageRow['sender'] === 'Tutor'){
         						        echo "<button name='flag' id='button' class='btn btn-primary btn-lg btn-block' value='".$messageRow['interactionID']."' type='submit' 
-        						        style='width:22%; height:10%;float: right; position: relative; margin-bottom:0px; font-size:14px; background:#960000; opacity:1;'>Flag Message</button>";
+        						        style='width:35%; height:10%;float: right; position: relative; margin-bottom:0px; font-size:14px; background:#960000; opacity:1;'>Flag Message</button>";
         						    }
         						    elseif ($messageRow['sender'] === 'Student'){
         						        echo "<button name='flag' id='button' class='btn btn-primary btn-lg btn-block' value='".$messageRow['interactionID']."' type='submit' 
-        						        style='width:22%; height:10%;float: right; position: relative; margin-bottom:0px; font-size:14px; background:#960000; opacity:1;'>Flag Message</button>";
+        						        style='width:35%; height:10%;float: right; position: relative; margin-bottom:0px; font-size:14px; background:#960000; opacity:1;'>Flag Message</button>";
         						    }
         						    echo "<p><br> ";
             					    echo "<span id=".$userDateStyle.">".$messageRow['dateTime']."</span>";

@@ -238,7 +238,7 @@ table {
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase" style="margin-top:7px; left:30px; height:0px;">
                     <li>
-                        <a href="<?php echo $_SESSION['usertype']; ?>sHome.php" style="margin-top:15px;" target="_blank">Home</a>
+                        <a href="<?php echo $_SESSION['usertype']; ?>sHome.php" style="margin-top:15px;" >Home</a>
                     </li>
                     <li class="dropdown" style="padding-right:35px;margin-top:-13px;">
                         <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
@@ -486,8 +486,8 @@ elseif ($_SESSION['usertype'] === "Student"){
                 echo " " .$tutorUsernameRetrieveRow['username']. "</td><td style='text-align:left;".$highlightAdd."'>" . $subjectRetrieveRow['subject'] . "</td>
                 <td style='text-align:left; max-width: 40px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;".$highlightAdd."'>"; if ($dataRetrieveRow['sender'] === $_SESSION['usertype']){echo "You:  ";} echo $dataRetrieveRow['message']. "</td>
                 <td ".$highlight.">" . $dataRetrieveRow['dateTime']. "</td>
-                <td ".$highlight."><button name='mybutton' id='button' style='font-size:13px; width:100%;' class='btn btn-primary btn-lg btn-block' value=".$dataRetrieveRow['convID']." type='submit' style='width:100%;'>Open Conversation</button></td>
-                <td ".$highlight."><button name='reviewbtn' id='button' style='font-size:13px; width:100%;' class='btn btn-primary btn-lg btn-block' value=".$dataRetrieveRow['convID']." type='submit'>Rate and Review</button></td></tr>";
+                <td ".$highlight."><button name='mybutton' id='button' style='font-size:13px; width:100%; padding-top:20px; padding-bottom:20px; padding-left:2px;padding-right:2px;' class='btn btn-primary btn-lg btn-block' value=".$dataRetrieveRow['convID']." type='submit' style='width:100%;'>Open Conversation</button></td>
+                <td ".$highlight."><button name='reviewbtn' id='button' style='font-size:13px; width:100%; padding-top:20px; padding-bottom:20px; padding-left:2px;padding-right:2px;' class='btn btn-primary btn-lg btn-block' value=".$dataRetrieveRow['convID']." type='submit'>Rate and Review</button></td></tr>";
             
             }
     echo "<button name='TutorHome' id='button' style='margin-bottom:30px; width:30%;' class='btn btn-primary btn-lg btn-block' value='Home' type='submit' style='width:30%;'>Home</button>";

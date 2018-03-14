@@ -189,7 +189,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
-    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"> </script>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
@@ -296,13 +297,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase" style="margin-top:10px;">
                     <li>
-                        <a href="#login" style="margin-top:15px;" target="_blank">Login</a>
+                        <a href="#login" style="margin-top:15px;" >Login</a>
                     </li>
                     <li>
-                        <a href="#usertype" style="margin-top:15px;" target="_blank">Sign Up</a>
+                        <a href="#usertype" style="margin-top:15px;">Sign Up</a>
                     </li>
                     <li>
-                        <a href="#features" style="margin-top:15px;" target="_blank">Features</a>
+                        <a href="#features" style="margin-top:15px;">Features</a>
                     </li>
                 </ul>
             </div>

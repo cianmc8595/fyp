@@ -234,7 +234,7 @@ q:after {
 		
 		<!--<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>Email: <a href="mailto:joe@bloggs.com" target="_blank"><?php echo $tutorEmail;?></a></li>
+				<li>Email: <a href="mailto:joe@bloggs.com" ><?php echo $tutorEmail;?></a></li>
 			</ul>
 		</div>-->
 		<div class="clear"></div>

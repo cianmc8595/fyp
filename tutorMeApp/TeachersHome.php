@@ -188,13 +188,13 @@ $result = $db->query("SELECT image FROM images WHERE userID = '" .$_SESSION['tea
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase" style="margin-top:7px; left:30px; height:0px;">
                     <li>
-                        <a href="manageTutors.php" style="margin-top:15px;" target="_blank">Tutors</a>
+                        <a href="manageTutors.php" style="margin-top:15px;" >Tutors</a>
                     </li>
                     <li>
-                        <a href="tutorInbox.php" style="margin-top:15px;" target="_blank">Interactions</a>
+                        <a href="tutorInbox.php" style="margin-top:15px;" >Interactions</a>
                     </li>
                     <li>
-                        <a href="manageReviews.php" style="margin-top:15px;" target="_blank">Reviews & Ratings</a>
+                        <a href="manageReviews.php" style="margin-top:15px;" >Reviews & Ratings</a>
                     </li>
                     <li class="dropdown" style="padding-right:35px;margin-top:-13px;">
                         <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">

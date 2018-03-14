@@ -340,16 +340,16 @@ form .stars span {
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase" style="margin-top:7px; left:30px; height:0px;">
                     <li>
-                        <a href="StudentsHome.php" style="margin-top:15px;" target="_blank">Home</a>
+                        <a href="StudentsHome.php" style="margin-top:15px;" >Home</a>
                     </li>
                     <li>
-                        <a href="tutorSearch.php" style="margin-top:15px;" target="_blank">Tutor Search</a>
+                        <a href="tutorSearch.php" style="margin-top:15px;" >Tutor Search</a>
                     </li>
                     <li>
-                        <a href="tutorInbox.php" style="margin-top:15px;" target="_blank">Inbox</a>
+                        <a href="tutorInbox.php" style="margin-top:15px;" >Inbox</a>
                     </li>
                     <li>
-                        <a href="resources.php" style="margin-top:15px;" target="_blank">Resources</a>
+                        <a href="resources.php" style="margin-top:15px;" >Resources</a>
                     </li>
                     <li class="dropdown" style="padding-right:35px;margin-top:-13px;">
                         <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
