@@ -1,1 +1,1 @@
-<?php include_once("tutorMeApp/LandingPage.php") ?>
+<?php include_once("LandingPage.php") ?>
