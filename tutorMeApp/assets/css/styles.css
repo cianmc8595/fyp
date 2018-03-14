@@ -11,22 +11,25 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
 
-html, body {background: grey; transform: translate3d(0px, 0px, 0px); font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
+html, body {background-image:url('cvbackg.png');
+			background-repeat: no-repeat; background-attachment: fixed;background-size:100vw 100vh;transform: translate3d(0px, 0px, 0px); font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
 .clear {clear: both;}
 
 p {
-	font-size: 1em;
+	font-size: 1.5em;
 	line-height: 1.4em;
 	margin-bottom: 20px;
 	color: #444;
+	font-family:Cambo;
+	font-weight:bold;
 }
 
 
 #cv {
-	width: 90%;
-	max-width: 800px;
+	width: 70%;
+	max-width: 1200px;
 	background: #f3f3f3;
-	margin: 30px auto;
+	margin: 60px auto;
 }
 
 .mainDetails {
@@ -37,7 +40,7 @@ p {
 #name h1 {
 	font-size: 2.5em;
 	font-weight: 700;
-	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-family: 'Cambo', Helvetica, Arial, sans-serif;
 	margin-bottom: -6px;
 	color: white;
 }
@@ -53,7 +56,7 @@ p {
 }
 
 #headshot {
-	width: 12.5%;
+	width: 110px;
 	float: center;
 	display: block;
     margin-left: auto;
@@ -129,21 +132,22 @@ section:last-child {
 
 .reviewContent {
 	float: right;
-	width: 72.5%;
+	width: 100%;
 	border-top: 1px solid #00899C;
 	padding: 20px 0 0;
 }
 
 .sectionTitle h1 {
-	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-family: 'Cambo', Helvetica, Arial, sans-serif;
 	font-style: italic;
 	font-size: 1.5em;
 	color: #00899C;
 }
 
 .sectionContent h2 {
-	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
-	font-size: 1.5em;
+	font-family: 'Cambo', Helvetica, Arial, sans-serif;
+	font-size: 1.3em;
+	color:#00899C;
 	margin-bottom: -2px;
 }
 

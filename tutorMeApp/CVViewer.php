@@ -71,17 +71,10 @@ if ($result->num_rows === 1) {
                 $teacherSurname = $rowTeacher['surname'];
 
             }
-            else {
-                echo "0 Teacher results";
-            }
+            
             
         }
-        else {
-            echo "0 Tutor results";
-        }
-}
-else {
-    echo "0 CV results";
+        
 }
 
 //DB details
@@ -103,11 +96,11 @@ else {
     if($result->num_rows > 0){
         $imgData = $result->fetch_assoc();
         $tutorPic = $imgData['image'];
-        $_SESSION['pictureCheck'] = "True";
+        $_SESSION['tutorpictureCheck'] = "True";
         //Render image
         
     }else{
-        $_SESSION['pictureCheck'] = "False";
+        $_SESSION['tutorpictureCheck'] = "False";
     }
 
 $conn->close();
@@ -202,26 +195,41 @@ form .stars span {
   -o-transition: -o-width 0.5s;
   transition: width 0.5s;
 }
+q:before {
+	font-size:1em;
+	content: open-quote;
+	color:#00899C;
+}
+ 
+q:after {
+	font-size:1em;
+    content: close-quote;
+    color:#00899C;
+}
         
     </style>
 </head>
 <body id="top">
-<div id="cv" class="instaFade">
-	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
+<div id="cv" class="instaFade" style="-webkit-border-radius: 40px 40px 40px 40px;-moz-border-radius: 40px 40px 40px 40px;border-radius: 40px 40px 40px 40px;">
+	<div class="mainDetails" style="-webkit-border-radius: 40px 40px 0px 0px;-moz-border-radius: 40px 40px 0px 0px;border-radius: 40px 40px 0px 0px;">
+	<div style="width:100%; height:100px; margin:0 auto; border:10px white;">
+		<p><a href="tutorSearch.php" style="font-family: Helvetica;text-decoration:none;font-weight:bold;background:#00899C;color:white;font-size:16px; padding:20px; float:left;" class="btn btn-danger">Back to Search</a></p>
+		<p><a href="messenger.php" style="font-family:Helvetica;text-decoration:none;font-weight:bold;background:#00899C;color:white;font-size:16px; padding:20px; float:right;" class="btn btn-danger">Contact this tutor</a></p>
+	</div>
+		<div id="headshot" class="quickFade" style="margin-top:-80px;">
 			<?php
-	                                if ($_SESSION['pictureCheck'] === "True"){
+	                                if ($_SESSION['tutorpictureCheck'] === "True"){
 	                                    echo '<img class="img-circle" src="data:image/jpeg;base64,'.base64_encode( $tutorPic ).'"/>';
 	                                }
-	                                elseif ($_SESSION['pictureCheck'] === "False"){
+	                                elseif ($_SESSION['tutorpictureCheck'] === "False"){
 	                                    echo '<img class="img-circle" src="headshot.jpg"/>';
 	                                }
 	                            ?>
 		</div>
 		
 		<div id="name">
-			<h1 class="quickFade delayTwo"><?php echo $tutorFirstname. " " . $tutorSurname; ?></h1>
-			<h2 class="quickFade delayThree"><?php echo "Subject - " . $subject; ?></h2>
+			<h1  style="font-family:Helvetica; font-weight:bold;"class="quickFade delayTwo"><?php echo $tutorFirstname. " " . $tutorSurname; ?></h1>
+			<h2  style="font-family:Helvetica; font-weight:bold;"class="quickFade delayThree"><?php echo "Subject - " . $subject; ?></h2>
 		</div>
 		
 		<!--<div id="contactDetails" class="quickFade delayFour">
@@ -235,26 +243,32 @@ form .stars span {
 		<section>
 			<article>
 				<div class="sectionTitle">
-					<h1>Tutor Profile</h1>
+					<h1 style="font-family:Cambo; font-weight:bold;">Tutor Profile</h1>
 				</div>
 				
 				<div class="sectionContent">
-				    <h2>Name</h2>
-					<p><?php echo $tutorFirstname. " " . $tutorSurname; ?></p>
-					<h2>Subject</h2>
-					<p><?php echo $subject; ?></p>
-					<h2>School Attended</h2>
-					<p><?php echo $pastSchool; ?></p>
-					<h2>Year Leaving Certificate Completed</h2>
-					<p><?php echo $lcYear; ?></p>
-					<h2>LC Grade achieved in tutoring subject</h2>
-					<p><?php echo $lcGrade; ?></p>
-					<h2>LC Teacher in tutoring subject</h2>
-					<p><?php echo $teacherFirstname. " " . $teacherSurname; ?></p>
-					<h2>About</h2>
-					<p><?php echo $about; ?></p>
-					<h2>Verification Status</h2>
-					<p><?php echo $verification; ?></p>
+					<div style="width:40%; float:left;">
+				    	<h2 style="font-family:Cambo; font-weight:bold;">Name</h2>
+						<p><?php echo $tutorFirstname. " " . $tutorSurname; ?></p>
+						<h2 style="font-family:Cambo; font-weight:bold;">Subject</h2>
+						<p><?php echo $subject; ?></p>
+						<h2 style="font-family:Cambo; font-weight:bold;">School Attended</h2>
+						<p><?php echo $pastSchool; ?></p>
+						<h2 style="font-family:Cambo; font-weight:bold;">Completed LC</h2>
+						<p><?php echo $lcYear; ?></p>
+					</div>
+					<div style="width:40%; float:right;padding-right:20px;">
+						<h2 style="font-family:Cambo; font-weight:bold;">LC Grade achieved in <?php echo $subject; ?></h2>
+						<p><?php echo $lcGrade; ?></p>
+						<h2 style="font-family:Cambo; font-weight:bold;"><?php echo $subject; ?> Teacher for LC</h2>
+						<p><?php echo $teacherFirstname. " " . $teacherSurname; ?></p>
+						<h2 style="font-family:Cambo; font-weight:bold;">Verification Status</h2>
+						<p><?php echo $verification; ?> - Tutors are verified by the teacher referenced on the CV</p>
+					</div>
+					<div style="width:90%; float:left;padding-right:20px;">
+						<h2 style="font-family:Cambo; font-weight:bold;">About</h2>
+						<p><?php echo $about; ?></p>
+					</div>
 				</div>
 			</article>
 			<div class="clear"></div>
@@ -262,16 +276,25 @@ form .stars span {
 		<section>
 			<article>
 				<div class="sectionTitle">
-					<h1>Teacher Information</h1>
+					<h1 style="font-family:Cambo; font-weight:bold;">Reference Teacher</h1>
 				</div>
 				
 				<div class="sectionContent">
-				    <h2>Name</h2>
-					<p><?php echo $teacherFirstname. " " . $teacherSurname; ?></p>
-					<h2>Current Position</h2>
-					<p><?php echo "Current ".$subject." teacher at ".$pastSchool; ?></p>
-					<h2>Email</h2>
-					<p><?php echo $teacherEmail; ?></p>
+					<?php
+					
+					if (!empty($teacherFirstname)){
+						echo '<h2 style="font-family:Cambo; font-weight:bold;">Name</h2>
+					<p>' .$teacherFirstname. '' . $teacherSurname. '</p>
+					<h2 style="font-family:Cambo; font-weight:bold;">Current Position</h2>
+					<p>Current '.$subject.' teacher at '.$pastSchool. '</p>
+					<h2 style="font-family:Cambo; font-weight:bold;">Email</h2>
+					<p>' . $teacherEmail . '</p>';
+					}
+					else{
+                				echo "<h2 style='font-family:Cambo; border:2px solid #00899C; background:#00899C; color:white; text-align:center; margin-left:170px; margin-bottom: 20px;margin-top:0px; font-weight:bold; width:270px;'>No teacher has been referenced on this CV.</h2>";
+					}
+					
+					?>
 				</div>
 			</article>
 			<div class="clear"></div>
@@ -280,8 +303,13 @@ form .stars span {
 			<article>
 				
 				<div class="sectionTitle">
-					<h1>Student Reviews</h1>
+					<h1 style="font-family:Cambo; font-weight:bold;">Student Reviews<br><br><br><br><br><br><br><br></h1>
 				</div>
+				<h2 style="color:#00899C; font-size:1.2em;text-align:center;font-family:Cambo; font-weight:bold;">The following reviews and ratings have been submitted by 
+						students who have interacted with this tutor. Each review has been approved by the reference teacher on this CV.<br><br>
+						Tutors may be registered to tutor in several subjects. We have included
+						all of the reviews left about this tutor below, ordered by subject with any <?php echo $subject; ?> reviews first.</h2>
+					<div class='sectionContent' style='height:650px;overflow: auto;'>
 				<?php
 					$host = "127.0.0.1";
 					$user = "cianmc85";
@@ -297,20 +325,20 @@ form .stars span {
     					die("Connection failed: " . $conn->connect_error);
 					}
     
-    				
-    					$reviewSql = "SELECT * FROM reviews WHERE tutorID = '".$tutorID."'";
+    					$count = 1;
+    					$reviewSql = "SELECT * FROM reviews WHERE tutorID = '".$tutorID."' AND subject = '".$subject."' AND verification = 'Approved'";
     					$reviewResult = $conn->query($reviewSql);
 
     					if ($reviewResult->num_rows > 0) { 
         					
-        					$count = 1;
         					// output data of each row
         					while($reviewRow = $reviewResult->fetch_assoc()) {
             
-        						
             					$reviewID = $reviewRow['reviewID'];
             					$review = $reviewRow['review'];
             					$rating = $reviewRow['rating'];
+            					$student = $reviewRow['studentUsername'];
+            					$reviewsubject = $reviewRow['subject'];
             					
             					if ($rating === "5"){
             						$rating = "star5.PNG";
@@ -330,32 +358,98 @@ form .stars span {
             					
             					if ($count == 1){
             						echo "<div class='reviewContent' style='border-top: none'>
-								    	<h2>Review</h2>
-								    	<p>" .$review. "</p>
-								    	<h2>Rating</h2>
-								    	<img style='padding-top:6px; padding-bottom:10px; width:200px; height:40px;' src=" .$rating. " alt='Mountain View'></div>";
+								    	<p><span style='color:#00899C;' >" .$student. " - </span><q>" .$review. "</q></p>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px;'>Rating</h2>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px; float:right; margin-right:280px; margin-top:-25px;'>Subject</h2>
+								    	<img style='padding-top:6px; padding-bottom:10px; width:200px; height:40px; margin-top:25px;' src=" .$rating. " alt='Mountain View'>
+            							<p style=' width:40px; float:right; margin-right:280px; margin-top:34px;'>" .$reviewsubject. "</p></div>";
+            							$count = $count + 1;
+            							$reviewsAdded = "true";
+            						
             					}
             					else {
             						echo "<div class='reviewContent'>
-								    	<h2>Review</h2>
-								    	<p>" .$review. "</p>
-								    	<h2>Rating</h2>
-								    	<img style='padding-top:6px; padding-bottom:10px; width:200px; height:40px;' src=" .$rating. " alt='Mountain View'></div>";
+								    	<p><span style='color:#00899C;' >" .$student. " - </span><q>" .$review. "</q></p>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px;'>Rating</h2>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px; float:right; margin-right:280px; margin-top:-25px;'>Subject</h2>
+								    	<img style='padding-top:26px; padding-bottom:10px; width:200px; height:40px;' src=" .$rating. " alt='Mountain View'>
+            							<p style=' width:40px; float:right; margin-right:280px; margin-top:30px;'>" .$reviewsubject. "</p></div>";
+            							$reviewsAdded = "true";
+            					}
+        					}
+            					
+            				
+            			}
+            			else{
+            				$reviewsAdded = "false";
+            			}
+            			
+            			$review2Sql = "SELECT * FROM reviews WHERE tutorID = '".$tutorID."' AND subject <> '".$subject."'  AND verification = 'Approved' ORDER BY subject";
+    					$review2Result = $conn->query($review2Sql);
+
+    					if ($review2Result->num_rows > 0) { 
+        					
+        					// output data of each row
+        					while($review2Row = $review2Result->fetch_assoc()) {
+            
+            					$reviewID = $review2Row['reviewID'];
+            					$review = $review2Row['review'];
+            					$rating = $review2Row['rating'];
+            					$student = $review2Row['studentUsername'];
+            					$reviewsubject = $review2Row['subject'];
+            					
+            					if ($rating === "5"){
+            						$rating = "star5.PNG";
+            					}
+            					elseif ($rating === "4") {
+            						$rating = "star4.PNG";
+            					}
+            					elseif ($rating === "3") {
+            						$rating = "star3.PNG";
+            					}
+            					elseif ($rating === "2") {
+            						$rating = "star2.PNG";
+            					}
+            					elseif ($rating === "1") {
+            						$rating = "star1.PNG";
             					}
             					
-            					$count = $count + 1;
+            					
+            					if ($count == 1){
+            						echo "<div class='reviewContent' style='border-top: none'>
+								    	<p><span style='color:#00899C;' >" .$student. " - </span><q>" .$review. "</q></p>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px;'>Rating</h2>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px; float:right; margin-right:280px; margin-top:-25px;'>Subject</h2>
+								    	<img style='padding-top:6px; padding-bottom:10px; width:200px; height:40px; margin-top:25px;' src=" .$rating. " alt='Mountain View'>
+            							<p style=' width:40px; float:right; margin-right:280px; margin-top:34px;'>" .$reviewsubject. "</p></div>";
+            							$count = $count + 1;
+            							
+            							$reviewsAdded = "true";
+            					}
+            					else {
+            						echo "<div class='reviewContent'>
+								    	<p><span style='color:#00899C;' >" .$student. " - </span><q>" .$review. "</q></p>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px;'>Rating</h2>
+								    	<h2 style='font-family:Cambo; font-weight:bold; width:40px; float:right; margin-right:280px; margin-top:-25px;'>Subject</h2>
+								    	<img style='padding-top:26px; padding-bottom:10px; width:200px; height:40px;' src=" .$rating. " alt='Mountain View'>
+            							<p style=' width:40px; float:right; margin-right:280px; margin-top:30px;'>" .$reviewsubject. "</p></div>";
+            							$reviewsAdded = "true";
+            					}
+            					
+        					}
                 			}
-                			$count = 1;
-            			} else {
-        					echo "0 Review Results";
-    					}
-					
+                			
+                			if ($reviewsAdded === "false"){
+                			
+                				echo "<h2 style='font-family:Cambo; border:2px solid #00899C; background:#00899C; color:white; text-align:center; margin-left:170px; margin-top:300px; font-weight:bold; width:270px;'>No reviews have been left about this tutor yet.</h2>";
+                			}
     					$conn->close();
 					?>
+				</div>	
 			</article>
 			<div class="clear"></div>
-			<p><a href="tutorSearch.php" style="text-decoration:none;background:#00899C;color:white;font-size:16px; padding:20px; margin-top:20px;float:left;" class="btn btn-danger">Back to Search</a></p>
-			<p><a href="messenger.php" style="text-decoration:none;background:#00899C;color:white;font-size:16px; padding:20px; float:right;" class="btn btn-danger">Contact this tutor</a></p>
+			<p><a href="tutorSearch.php" style="font-family:Helvetica;text-decoration:none;font-weight:bold;background:#00899C;color:white;font-size:16px; padding:20px; margin-top:20px;float:left;" class="btn btn-danger">Back to Search</a></p>
+			<p><a href="messenger.php" style="font-family:Helvetica;text-decoration:none;font-weight:bold;background:#00899C;color:white;font-size:16px; padding:20px; float:right;" class="btn btn-danger">Contact this tutor</a></p>
 		
 		</section>
 		

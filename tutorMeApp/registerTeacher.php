@@ -24,11 +24,15 @@ if(isset($_POST['register'])){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $sql = $conn_found->prepare("SELECT username FROM teachers WHERE username = ?");
+        $sql = $conn_found->prepare("SELECT username FROM students WHERE username = ?
+                                    UNION 
+                                    SELECT username FROM tutors WHERE username = ?
+                                    UNION 
+                                    SELECT username FROM teachers WHERE username = ?");
         
         if ($conn_found) {
             // Bind variables to the prepared statement as parameters
-            $sql->bind_param('s', $TeacherUsername);
+            $sql->bind_param('sss', $TeacherUsername, $TeacherUsername, $TeacherUsername);
             
             // Set parameters
             $TeacherUsername = trim($_POST["username"]);

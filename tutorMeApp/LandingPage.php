@@ -367,7 +367,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     <div class="section section-our-team-freebie" id="usertype">
         <div class="parallax filter filter-color-black">
-            <div class="image" style="background-image:url('https://images.cdn3.stockunlimited.net/thumb450/school-supplies-on-desk-background-with-copy-space_1955905.jpg')">
+            <div class="image" style="background-image:url('https://images.cdn3.stockunlimited.net/thumb450/school-supplies-on-desk-background-with-copy-space_1955905.jpg');">
             </div>
             <div class="container" style="height:700px;">
                 <div class="content">

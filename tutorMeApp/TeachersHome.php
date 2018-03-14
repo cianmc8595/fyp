@@ -230,7 +230,7 @@ $result = $db->query("SELECT image FROM images WHERE userID = '" .$_SESSION['tea
         <div class="parallax filter filter-color-blue" style="height:900px;">
             <div class="section" id="login">`
             <div class="container">
-             <div class="flexbox-container" style="margin-top:200px;">
+             <div class="flexbox-container" style="margin-top:250px;">
 
         <!-- HOME -->
         <a href="manageTutors.php">
@@ -275,7 +275,8 @@ $result = $db->query("SELECT image FROM images WHERE userID = '" .$_SESSION['tea
                 </div>
             </div>
         </a>
-
+</div>
+<div class="flexbox-container" style="margin-top:0px;">
         <!-- DROP-OFF LOCATION MANAGEMENT -->
         <a href="tutorInbox.php">
             <div class="app-card" id="drop-off-location-management-card-color" style="margin-top:-50px;">
@@ -338,6 +339,7 @@ $result = $db->query("SELECT image FROM images WHERE userID = '" .$_SESSION['tea
                 </div>
             </div>
         </a>
+</div>
 </div>
             </div>
             

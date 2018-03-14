@@ -1009,7 +1009,7 @@ figcaption p {
         <div class="parallax filter filter-color-blue" style="height:1400px;">
             <div class="section" id="login">
             <div class="container">
-             <div class="component" style="margin-top:150px;">
+             <div class="component" style="max-width:1300px; margin: 0 auto;margin-top:150px; ">
              	<h1 id="subjectChange" style="text-align:center; font-size:28px; margin-bottom:-60px;">Hi <b><?php echo $_SESSION['username']; ?>! </b>To search for a tutor, simply choose your subject below!</h1>
   <ul class="align">
     <!-- Book 1 -->
@@ -1026,9 +1026,9 @@ figcaption p {
         <!-- Pages -->        
         <ul class='page'>
           <li></li>
-          <li>
+          <li style="color:white;">
           	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="English"></input>
+        		<input name="subjectChoice" class="btn btn-danger" style="background:#00899C; color:white; font-weight:bold;" type="submit" value="English"></input>
         	</form>
           </li>
           <li></li>
@@ -1062,7 +1062,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Maths"></input>
+        		<input name="subjectChoice" class="btn btn-danger"  style="background:#00899C; color:white; font-weight:bold;" type="submit" value="Maths"></input>
         	</form>
           </li>
           <li></li>
@@ -1096,7 +1096,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Irish"></input>
+        		<input name="subjectChoice" class="btn btn-danger" style="background:#00899C; color:white; font-weight:bold;"  type="submit" value="Irish"></input>
         	</form>
           </li>
           <li></li>
@@ -1130,7 +1130,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Physics"></input>
+        		<input name="subjectChoice" class="btn btn-danger"  style="background:#00899C; color:white; font-weight:bold;" type="submit" value="Physics"></input>
         	</form>
           </li>
           <li></li>
@@ -1164,7 +1164,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Chemistry"></input>
+        		<input name="subjectChoice" class="btn btn-danger"  style="background:#00899C; color:white; font-weight:bold;" type="submit" value="Chemistry"></input>
         	</form>
           </li>
           <li></li>
@@ -1198,7 +1198,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Biology"></input>
+        		<input name="subjectChoice" class="btn btn-danger"  style="background:#00899C; color:white; font-weight:bold;" type="submit" value="Biology"></input>
         	</form>
           </li>
           <li></li>
@@ -1231,7 +1231,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="French"></input>
+        		<input name="subjectChoice" class="btn btn-danger"  style="background:#00899C; color:white; font-weight:bold;" type="submit" value="French"></input>
         	</form>
           </li>
           <li></li>
@@ -1264,7 +1264,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="German"></input>
+        		<input name="subjectChoice" class="btn btn-danger"  style="background:#00899C; color:white; font-weight:bold;" type="submit" value="German"></input>
         	</form>
           </li>
           <li></li>
@@ -1297,7 +1297,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Geography"></input>
+        		<input name="subjectChoice" class="btn btn-danger"  style="background:#00899C; color:white; font-weight:bold;" type="submit" value="Geography"></input>
         	</form>
           </li>
           <li></li>
@@ -1330,7 +1330,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="History"></input>
+        		<input name="subjectChoice" class="btn btn-danger" style="background:#00899C; color:white; font-weight:bold;"  type="submit" value="History"></input>
         	</form>
           </li>
           <li></li>
@@ -1363,7 +1363,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Music"></input>
+        		<input name="subjectChoice" class="btn btn-danger" style="background:#00899C; color:white; font-weight:bold;"  type="submit" value="Music"></input>
         	</form>
           </li>
           <li></li>
@@ -1396,7 +1396,7 @@ figcaption p {
           <li></li>
           <li>
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults">
-        		<input name="subjectChoice" class="btn btn-danger" type="submit" value="Business"></input>
+        		<input name="subjectChoice" class="btn btn-danger" style="background:#00899C; color:white; font-weight:bold;"  type="submit" value="Business"></input>
         	</form>
           </li>
           <li></li>
@@ -1518,7 +1518,7 @@ if (isset($_POST['subjectChoice'])) {
                 $schoolCondition = $rowSchool['pastSchool'];
 
                 if ($schoolCondition === $_SESSION['school']){
-                    echo "<tr><td>" . $rowSchool["firstname"]. " " . $rowSchool["surname"]. "</td><td>" . $row["verification"]. "</td><td><button name='mybutton' value=". $row["cvID"]." type='submit'>View CV</button></td></tr>";
+                    echo "<tr><td>" . $rowSchool["firstname"]. " " . $rowSchool["surname"]. "</td><td>" . $row["verification"]. "</td><td><button class='btn btn-primary btn-lg btn-block' style='margin-top:0px; background:#008b9c;color:white; border:0px;'name='mybutton' value=". $row["cvID"]." type='submit'>View CV</button></td></tr>";
                 }
             }
             else {

@@ -61,12 +61,15 @@ if(isset($_POST['sendReview']))
                                     
         $cvid = $cvRow['cvID'];
         
-        $tutorIDRetrieveSql = "SELECT tutorID FROM CVs where cvID = '".$cvid."'";
+        $tutorIDRetrieveSql = "SELECT * FROM CVs where cvID = '".$cvid."'";
     	$tutorIDRetrieveSqlResult = $conn->query($tutorIDRetrieveSql);
         
         $tutorRow = $tutorIDRetrieveSqlResult->fetch_assoc();
                                     
         $tutorID = $tutorRow['tutorID'];
+        $cvsubject = $tutorRow['subject'];
+        $reviewVerification = "Unapproved";
+        $studentWhoWroteReview = $_SESSION['username'];
         
         $reviewIDRetrieveSql = "SELECT reviewID FROM reviews ORDER BY reviewID DESC LIMIT 1";
     	$reviewIDRetrieveSqlResult = $conn->query($reviewIDRetrieveSql);
@@ -77,11 +80,11 @@ if(isset($_POST['sendReview']))
         $reviewID = $reviewID + 1;
         
         // Prepare an insert statement
-        $SQL = $conn->prepare("INSERT INTO reviews (reviewID, tutorID, review, rating) VALUES (?, ?, ?, ?)");
+        $SQL = $conn->prepare("INSERT INTO reviews (reviewID, tutorID, review, rating, verification, studentUsername, subject) VALUES (?, ?, ?, ?, ?, ?, ?)");
          
         if($conn){
             // Bind variables to the prepared statement as parameters
-            $SQL->bind_param('ssss', $param_reviewID, $param_tutorID, $param_review, $param_rating); 
+            $SQL->bind_param('sssssss', $param_reviewID, $param_tutorID, $param_review, $param_rating, $param_verification, $param_stuUName, $param_subject); 
             
             
             // Set parameters
@@ -89,7 +92,9 @@ if(isset($_POST['sendReview']))
             $param_tutorID = $tutorID;
             $param_review = $review; 
             $param_rating = $radioVal;
-            
+            $param_verification = $reviewVerification;
+            $param_stuUName = $studentWhoWroteReview;
+            $param_subject = $cvsubject;
             
             // Attempt to execute the prepared statement
             if($SQL->execute()){

@@ -449,17 +449,14 @@ if(isset($_POST['reactivateStudent']))
                     $otherImageFound = "True";
 
                 }else{
-                    echo "No tutor image found";
                     $otherImageFound = "False";
                 }
             
             }else{
-                echo "No tutor username found";
                 $otherUserUsername = "otherUsername";
             }
             
         }else{
-            echo "No tutor id found";
         }
         
     }
@@ -507,17 +504,14 @@ if(isset($_POST['reactivateStudent']))
                     $tutorImageFound = "True";
 
                 }else{
-                    echo "No tutor image found";
                     $tutorImageFound = "False";
                 }
             
             }else{
-                echo "No tutor username found";
                 $tutorUsername = "tutor";
             }
             
         }else{
-            echo "No tutor id found";
         }
     }
 ?>
