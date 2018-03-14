@@ -471,14 +471,14 @@ if (isset($_POST['home'])) {
                     <h2 class="text-center">Edit Profile Picture</h2> 
                     <?php
 	                                if ($_SESSION['pictureCheck'] === "True"){
-	                                    echo '<img style="height:297px; width:85%;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['profilePic'] ).'"/>';
+	                                    echo '<img style="height:297px; max-width:400px;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['profilePic'] ).'"/>';
 	                                }
 	                                elseif ($_SESSION['pictureCheck'] === "False"){
-	                                    echo '<img style="height:297px; width:85%;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="headshot.jpg"/>';
+	                                    echo '<img style="height:297px; max-width:400px;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="headshot.jpg"/>';
 	                                }
 	                ?>
-                    <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:100%;">
-                        <input type="file" name="image" class="btn btn-primary btn-lg btn-block"/>
+                    <div class="form-group" style="height:auto; margin: 0 auto;  margin-top:40px;padding: 0px; position: relative; width:90%; background: url(assets/css/chooseImage.png); background-size:70% 100%;background-position:center; background-repeat: no-repeat;">
+                        <input type="file" name="image" class="btn btn-primary btn-lg btn-block" style="width:100%; margin:0 auto; opacity:0;"/>
                     </div>
                      <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:85%;">
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save New Picture" name="saveNewImage" style="width:80%; margin: 0 auto; position: relative;">

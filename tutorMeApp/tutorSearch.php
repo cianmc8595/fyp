@@ -1010,7 +1010,7 @@ figcaption p {
             <div class="section" id="login">
             <div class="container">
              <div class="component" style="max-width:1300px; margin: 0 auto;margin-top:150px; ">
-             	<h1 id="subjectChange" style="text-align:center; font-size:28px; margin-bottom:-60px;">Hi <b><?php echo $_SESSION['username']; ?>! </b>To search for a tutor, simply choose your subject below!</h1>
+             	<h1 id="subjectChange" style="text-align:center; text-shadow: none;font-size:28px; margin-bottom:-60px;">Hi <b><?php echo $_SESSION['username']; ?>! </b>To search for a tutor, simply choose your subject below!</h1>
   <ul class="align">
     <!-- Book 1 -->
     <li>
@@ -1416,7 +1416,7 @@ figcaption p {
     </li>
   </ul> 
 </div>
-<h1 id="customise" style="text-align:center; font-size:28px; margin-top:60px;">Or expand your search below!</h1>
+<h1 id="customise" style="text-align:center;  text-shadow: none;font-size:28px; margin-top:60px;">Or expand your search below!</h1>
 <div class="login-form" style="margin-top:-100px;">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#searchResults" method="post" enctype="multipart/form-data" style="padding-bottom:50px;
                 			-webkit-border-radius: 40px 40px 40px 40px;-moz-border-radius: 40px 40px 40px 40px;border-radius: 40px 40px 40px 40px;">

@@ -222,10 +222,10 @@ $result = $db->query("SELECT image FROM images WHERE userID = '" .$_SESSION['tut
     </nav>
 
     <div class="section section-header">
-        <div class="parallax filter filter-color-blue" style="height:700px;">
+        <div class="parallax filter filter-color-blue" style="height:900px;">
             <div class="section" id="login">`
             <div class="container">
-             <div class="flexbox-container" style="margin-top:200px;">
+             <div class="flexbox-container" style="margin-top:250px;">
 
         <!-- HOME -->
         <a href="NewCV.php">

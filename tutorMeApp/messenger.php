@@ -786,7 +786,7 @@ if(isset($_POST['reactivateStudent']))
             <div class="login-form">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="padding-bottom:85px; margin-top:-50px;
                                  -webkit-border-radius: 40px 40px 40px 40px;-moz-border-radius: 40px 40px 40px 40px;border-radius: 40px 40px 40px 40px;">
-                    <p style="text-align:center; background:#960000;margin-left:1020px; width:100px; margin-top:0px;position:absolute;
+                    <p style="text-align:center; background:#960000;float:right; width:100px; margin-top:0px;position:relative;
                     -webkit-border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;border-radius: 10px 10px 10px 10px;"><a href="#" style="font-size:11px; color:white;"onClick="document.getElementById('shadowing').style.display='block';
                       document.getElementById('box').style.display='block';"><b>TutorLink Interaction Guidelines</b></a></p>
                     

@@ -1795,12 +1795,12 @@ a,
   top: -10px;
 }
 .navbar-nav.navbar-right > li > .dropdown-menu:before {
-  left: auto;
-  right: 12px;
+  left: 53px;
+  right: 83px;
 }
 .navbar-nav.navbar-right > li > .dropdown-menu:after {
-  left: auto;
-  right: 12px;
+  left: 53px;
+  right: 83px;
 }
 .dropdown-menu > li > a {
   padding: 10px 20px;

@@ -263,12 +263,13 @@ if (isset($_POST['saveChanges'])) {
     </nav>
     
     <div class="section section-header">
-        <div class="parallax filter filter-color-blue" style="height:1100px;">
+        <div class="parallax filter filter-color-blue" style="height:2100px;">
             <div class="section" id="login">`
             <div class="container">
             <div class="login-form">
                
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="margin-top:-250px; height:630px; padding-bottom:85px; width:41%; float: left; -webkit-border-radius: 20px 0px 0px 20px;-moz-border-radius: 20px 0px 0px 20px;border-radius: 20px 0px 0px 20px;">
+               
+               <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#formResults" method="post" enctype="multipart/form-data" style="padding-bottom:145px; margin-top:-250px; -webkit-border-radius: 40px 40px 0px 0px;-moz-border-radius: 40px 40px 0px 0px;border-radius: 40px 40px 0px 0px;">
                     <h2 class='text-center'>Manage Tutors and CVs</h2>
             <h3 class='text-center' style="margin-top:0px;">The following are the CVs on which you have been chosen as a reference teacher.</br>It is your job to verify these CVs if you deem their information to be true and accurate.
             </br></br>Select a CV from your list and click submit to view and verify the CV's information.</h3>
@@ -284,7 +285,9 @@ session_start();
 
     $result = mysqli_query($mysqli, "SELECT * FROM CVs where referenceTeacher = '".$_SESSION['teacherID']."'");
     
-    echo "<select style='width:100%; margin-top:30px;' class='btn btn-primary dropdown-toggle' name='mydropbox' id='mydropbox' onchange='copyValue()'>";
+    if($result->num_rows > 0){ 
+        
+    echo "<select  style='width:50%; display:block; margin: 0 auto; margin-top:30px;'  class='btn btn-primary dropdown-toggle' name='mydropbox' id='mydropbox' onchange='copyValue()'>";
 
     while ($row = $result->fetch_assoc()) {
 
@@ -302,15 +305,26 @@ session_start();
 }
 
     echo "</select>";
-
+}
+else{
+    echo "<h3 class='text-center'>It looks like you haven't been referenced on any tutor's CVs yet. Check again later!</br></h3>";
+        echo "<div style='width:100%;'>
+                <img src='nothingfound.png' class='text-center' style='width:450px;height:450px; display:block; margin: 0 auto; margin-top:-70px;'></img>
+             </div>";
+}
 ?>
+                
+                    
                 <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:85%;">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="View CV Information" name="submit" style="width:70%; margin:0 auto; background:#008b9c; position: relative; margin-top:30px;">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Home" name="home" style="width:45%; margin:0 auto; background:#008b9c; position: relative; margin-top:30px;">
+                    <a href="#formResults" style="text-decoration: none;"><input type="submit" class="btn btn-primary btn-lg btn-block" value="View CV Information" name="submit" style="width:35%; float: left; background:#008b9c; position: relative; margin-top:30px;"></a>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Home" name="home" style="width:35%; float: right; background:#008b9c; position: relative; margin-top:30px;">
                 </div>
-            </form>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="margin-top:-250px; height:830px; padding-bottom:85px; width:55%; float: right; -webkit-border-radius: 0px 20px 20px 0px;-moz-border-radius: 0px 20px 20px 0px;border-radius: 0px 20px 20px 0px;">
-		    <div class="form-group <?php echo (!empty($tutorID_err)) ? 'has-error' : ''; ?>">
+                    
+                
+                    
+                </form>
+               <form id="formResults" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="padding-bottom:85px; padding-top:85px; margin-top:50px; -webkit-border-radius: 0px 0px 40px 40px;-moz-border-radius: 0px 0px 40px 40px;border-radius: 0px 0px 40px 40px;">
+                    <div class="form-group <?php echo (!empty($tutorID_err)) ? 'has-error' : ''; ?>">
                 <label style="margin-left:70px;">CV ID:<sup>*</sup></label>
                 <input type="text" name="cvID"class="form-control" value="<?php echo $retrieved_CVID; ?>" readonly="readonly">
             </div>
@@ -351,7 +365,25 @@ session_start();
                 <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save Changes" name="saveChanges" style="width:45%; margin:0 auto; background:#008b9c; position: relative; margin-top:30px;">
             </div>
                 </form>
-            
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
             
             
             </div>    

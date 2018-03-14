@@ -204,8 +204,8 @@ if($_SESSION['usertype'] !== 'Student'){
 
                     <div class="login-form form-group" style="height:100px; margin: 0 auto; margin-top:50px; padding: 10px; position: relative; width:100%; background:white;-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;">
                         <a href="#social"><input href="#social" name="Social" type="submit" class="btn btn-primary btn-lg btn-block" value="Social Media" style="display:block; margin-top:8px;height: 80%; width:25%; float: left; position: relative;"></a>
-                        <a href="#links"><input name="Links" type="submit" class="btn btn-primary btn-lg btn-block" value="Useful Links" style="margin-top:8px; left:170px; width:25%; height: 80%; float: center; position: relative;"></a>
-                        <a href="#tools"><input name="Tools" type="submit" class="btn btn-primary btn-lg btn-block" value="Cool Tools" style="margin-top:-83px; width:25%; height: 80%; float: right; position: relative;"></a>
+                        <a href="#tools"><input name="Tools" type="submit" class="btn btn-primary btn-lg btn-block" value="Tools" style="margin-top:8px; left:170px; width:25%; height: 80%; float: center; position: relative;"></a>
+                        <a href="#links"><input name="Links" type="submit" class="btn btn-primary btn-lg btn-block" value="Useful Links" style="margin-top:-83px; width:25%; height: 80%; float: right; position: relative;"></a>
                     </div>
             
             </div>

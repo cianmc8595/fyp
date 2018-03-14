@@ -151,6 +151,42 @@ if(isset($_POST['register'])){
 
             // Attempt to execute the prepared statement
             if($SQL->execute()){
+                
+                $check = getimagesize($_FILES["image"]["tmp_name"]);
+                if($check !== false){
+                    $image = $_FILES['image']['tmp_name'];
+                    $imgContent = addslashes(file_get_contents($image));
+                    $usertypeForImage = "Teacher";
+                    $userIDforImage = $param_teacherID;
+                    /*
+                     * Insert image data into database
+                     */
+        
+                    //DB details
+                    $dbHost     = '127.0.0.1';
+                    $dbUsername = 'cianmc85';
+                    $dbPassword = '';
+                    $dbName     = 'project_db';
+        
+                    //Create connection and select DB
+                    $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+        
+                    // Check connection
+                    if($db->connect_error){
+                        die("Connection failed: " . $db->connect_error);
+                    }
+        
+                    //Insert image content into database
+                    $insert = $db->query("INSERT into images (image, userID, usertype) VALUES ('$imgContent', '$userIDforImage', '$usertypeForImage')");
+                    if($insert){
+                        echo "File uploaded successfully.";
+                    }else{
+                        echo "File upload failed, please try again.";
+                    } 
+                }else{
+                    echo "Please select an image file to upload.";
+                }
+                
                 // Redirect to login page
                 header("location: LandingPage.php#login");
             } else{
@@ -165,40 +201,6 @@ if(isset($_POST['register'])){
     // Close connection
     $conn_found->close();
     
-    $check = getimagesize($_FILES["image"]["tmp_name"]);
-    if($check !== false){
-        $image = $_FILES['image']['tmp_name'];
-        $imgContent = addslashes(file_get_contents($image));
-        $usertypeForImage = "Teacher";
-        $userIDforImage = $param_teacherID;
-        /*
-         * Insert image data into database
-         */
-        
-        //DB details
-        $dbHost     = '127.0.0.1';
-        $dbUsername = 'cianmc85';
-        $dbPassword = '';
-        $dbName     = 'project_db';
-        
-        //Create connection and select DB
-        $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-        
-        // Check connection
-        if($db->connect_error){
-            die("Connection failed: " . $db->connect_error);
-        }
-        
-        //Insert image content into database
-        $insert = $db->query("INSERT into images (image, userID, usertype) VALUES ('$imgContent', '$userIDforImage', '$usertypeForImage')");
-        if($insert){
-            echo "File uploaded successfully.";
-        }else{
-            echo "File upload failed, please try again.";
-        } 
-    }else{
-        echo "Please select an image file to upload.";
-    }
 }
 elseif(isset($_POST['return'])){
     
@@ -431,8 +433,8 @@ elseif(isset($_POST['return'])){
                     <div class="form-group <?php echo (!empty($school_err)) ? 'has-error' : ''; ?>">
         	            <h2 class="text-center" style="font-size:18px;">Select a Profile Picture to upload:</h2>
                     </div>
-                    <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:50%;">
-                        <input type="file" name="image" class="btn btn-primary btn-lg btn-block"/>
+                    <div class="form-group" style="height:auto; margin: 0 auto;  margin-top:40px;padding: 0px; position: relative; width:90%; background: url(assets/css/chooseImage.png); background-size:20% 100%;background-position:center; background-repeat: no-repeat;">
+                        <input type="file" name="image" class="btn btn-primary btn-lg btn-block" style="width:100%; margin:0 auto; opacity:0;"/>
                     </div>
                      <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:50%;">
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Register" name="register" style="width:40%; float: left; position: relative; margin-top:0px;">

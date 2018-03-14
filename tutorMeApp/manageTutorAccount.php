@@ -389,7 +389,7 @@ if (isset($_POST['home'])) {
             <div class="container">
             
             <div class="login-form">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="margin-top:-50px; height:570px; padding-bottom:85px; width:60%; float: left; -webkit-border-radius: 20px 0px 0px 20px;-moz-border-radius: 20px 0px 0px 20px;border-radius: 20px 0px 0px 20px;">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="margin-top:-50px; height:620px; padding-bottom:85px; width:60%; float: left; -webkit-border-radius: 20px 0px 0px 20px;-moz-border-radius: 20px 0px 0px 20px;border-radius: 20px 0px 0px 20px;">
 		            <div class="avatar avatar-danger" style="margin-top:-35px;">
 			            <img class="img-circle" src="assets/img/faces/tutorsIcon.png" alt="">
 		            </div>
@@ -437,23 +437,23 @@ if (isset($_POST['home'])) {
                 		</select>
                 		<span class="help-block"><?php echo $pastSchool_err; ?></span>
             		</div>
-                    <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:85%;">
+                    <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:85%; margin-top:60px;">
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save Changes" name="saveChanges" style="width:40%; float: left; position: relative;">
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Home" name="home" style="width:40%; float: right; background:#008b9c; position: relative; margin-top:0px;">
                     </div>
                 </form>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="margin-top:-50px; height:570px; padding-bottom:85px; width:35%; float: right; -webkit-border-radius: 0px 20px 20px 0px;-moz-border-radius: 0px 20px 20px 0px;border-radius: 0px 20px 20px 0px;">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" style="margin-top:-50px; height:620px; padding-bottom:85px; width:35%; float: right; -webkit-border-radius: 0px 20px 20px 0px;-moz-border-radius: 0px 20px 20px 0px;border-radius: 0px 20px 20px 0px;">
                     <h2 class="text-center">Edit Profile Picture</h2> 
                     <?php
 	                                if ($_SESSION['pictureCheck'] === "True"){
-	                                    echo '<img style="height:220px; width:65%;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['profilePic'] ).'"/>';
+	                                    echo '<img style="height:297px; max-width:400px;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['profilePic'] ).'"/>';
 	                                }
 	                                elseif ($_SESSION['pictureCheck'] === "False"){
-	                                    echo '<img style="height:220px; width:85%;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="headshot.jpg"/>';
+	                                    echo '<img style="height:297px; max-width:400px; display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="headshot.jpg"/>';
 	                                }
 	                ?>
-                    <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:100%;">
-                        <input type="file" name="image" class="btn btn-primary btn-lg btn-block"/>
+                    <div class="form-group" style="height:auto; margin: 0 auto;  margin-top:40px;padding: 0px; position: relative; width:90%; background: url(assets/css/chooseImage.png); background-size:70% 100%;background-position:center; background-repeat: no-repeat;">
+                        <input type="file" name="image" class="btn btn-primary btn-lg btn-block" style="width:100%; margin:0 auto; opacity:0;"/>
                     </div>
                      <div class="form-group" style="height:auto; margin: 0 auto; padding: 10px; position: relative; width:85%;">
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save New Picture" name="saveNewImage" style="width:80%; margin: 0 auto; position: relative;">

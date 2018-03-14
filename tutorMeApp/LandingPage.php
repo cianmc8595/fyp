@@ -189,9 +189,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"> </script>
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap‌​.min.js"></script> 
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstra‌​p.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 <style type="text/css">
@@ -368,7 +367,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     <div class="section section-our-team-freebie" id="usertype">
         <div class="parallax filter filter-color-black">
-            <div class="image" style="background-image:url('https://images.cdn3.stockunlimited.net/thumb450/school-supplies-on-desk-background-with-copy-space_1955905.jpg');">
+            <div class="image" style="background-image:url(assets/css/cvbackg.png);">
             </div>
             <div class="container" style="height:700px;">
                 <div class="content">
@@ -467,7 +466,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <div class="col-md-4">
                     <div class="info-icon">
                         <div class="avatar avatar-danger" style="background:#FC7800;">
-                            <img alt="..." class="img-circle" style="width:100px;height:100px;" src="inbox.png"/>
+                            <img alt="..." class="img-circle" style="width:100px;height:100px;" src="manageInteractions.png"/>
                         </div>
                         <h3>Messenger</h3>
                         <p class="description">Our in-built messenger app keeps all educational talk within the system, in a safe and monitored environment.</p>

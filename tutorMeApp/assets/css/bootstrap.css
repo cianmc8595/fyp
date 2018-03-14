@@ -3666,7 +3666,7 @@ tbody.collapse.in {
 }
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 60px;
   left: 0;
   z-index: 1000;
   display: none;
@@ -3675,7 +3675,7 @@ tbody.collapse.in {
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 14px;
-  text-align: left;
+  text-align: center;
   list-style: none;
   background-color: #fff;
   -webkit-background-clip: padding-box;
@@ -3781,7 +3781,7 @@ tbody.collapse.in {
 @media (min-width: 768px) {
   .navbar-right .dropdown-menu {
     right: 0;
-    left: auto;
+    left: 10px;
   }
   .navbar-right .dropdown-menu-left {
     right: auto;
