@@ -13,10 +13,15 @@ if($_SESSION['usertype'] !== 'Student'){
 }
 
 //DB details
-        $dbHost     = '127.0.0.1';
+        /*$dbHost     = '127.0.0.1';
         $dbUsername = 'cianmc85';
         $dbPassword = '';
-        $dbName     = 'project_db';
+        $dbName     = 'project_db';*/
+        
+        $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+        $dbUsername = 'bdff3cc89b8df5';
+        $dbPassword = '25912b2f';
+        $dbName     = 'heroku_6a6bf0a23aababd';
         
         //Create connection and select DB
         $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
