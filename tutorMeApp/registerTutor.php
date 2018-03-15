@@ -2,15 +2,21 @@
 
 //Connect to the Database
 /* Code below is based on https://community.c9.io/t/connecting-php-to-mysql/1606 a post by Brady Dowling */
+/*cloud 9 variables
 $host = "127.0.0.1";
 $user = "cianmc85";
 $pass = "";
 $db = "project_db";
-$port = 3306;
+$port = 3306;*/
+
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
     
 // Create connection
 /* Code below is based on aspects from http://www.homeandlearn.co.uk/php and https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection */
-$conn_found = new mysqli($host, $user, $pass, $db, $port);
+$conn_found = new mysqli($host, $user, $pass, $db);
  
 // Define variables and initialize with empty values
 $tutorID = $username = $password = $confirm_password = $email = $firstname = $surname = $pastSchool = "";
@@ -155,11 +161,16 @@ if(isset($_POST['register'])){
                      * Insert image data into database
                      */
         
-                    //DB details
-                    $dbHost     = '127.0.0.1';
+                    //cloud 9 DB details
+                    /*$dbHost     = '127.0.0.1';
                     $dbUsername = 'cianmc85';
                     $dbPassword = '';
-                    $dbName     = 'project_db';
+                    $dbName     = 'project_db';*/
+                    
+                    $dbHost = "eu-cdbr-west-02.cleardb.net";
+                    $dbUsername = "bdff3cc89b8df5";
+                    $dbPassword = "25912b2f";
+                    $dbName = "heroku_6a6bf0a23aababd";
         
                     //Create connection and select DB
                     $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

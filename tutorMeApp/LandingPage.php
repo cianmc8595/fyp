@@ -1,5 +1,12 @@
 <?php
 
+//cloud 9 connection variables
+/*$host = "127.0.0.1";
+$user = "cianmc85";
+$pass = "";
+$db = "project_db";
+$port = 3306;*/
+
 //Connect to the Database
 /* Code below is based on https://community.c9.io/t/connecting-php-to-mysql/1606 a post by Brady Dowling */
 $host = "eu-cdbr-west-02.cleardb.net";

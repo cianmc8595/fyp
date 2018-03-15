@@ -19,15 +19,21 @@ if($_SESSION['usertype'] !== 'Tutor'){
 
 //Connect to the Database
 /* Code below is based on https://community.c9.io/t/connecting-php-to-mysql/1606 a post by Brady Dowling */
+/* cloud 9
 $host = "127.0.0.1";
 $user = "cianmc85";
 $pass = "";
 $db = "project_db";
-$port = 3306;
+$port = 3306;*/
     
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
+
 // Create connection
 /* Code below is based on aspects from http://www.homeandlearn.co.uk/php and https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection */
-$conn_found = new mysqli($host, $user, $pass, $db, $port);
+$conn_found = new mysqli($host, $user, $pass, $db);
  
 // Define variables and initialize with empty values
 $cvID = $subject = $referenceTeacher = $lcGrade = $lcYear = $about = $verification = "";
@@ -44,14 +50,20 @@ if(isset($_POST["newCV"])){
     }
     
     //check that they don't already have a CV in this subject
+    /*cloud 9
     $host = "127.0.0.1";
     $user = "cianmc85";
     $pass = "";
     $db = "project_db";
-    $port = 3306;
+    $port = 3306;*/
+    
+    $host = "eu-cdbr-west-02.cleardb.net";
+    $user = "bdff3cc89b8df5";
+    $pass = "25912b2f";
+    $db = "heroku_6a6bf0a23aababd";
 
     // Create connection
-    $conn = new mysqli($host, $user, $pass, $db, $port);
+    $conn = new mysqli($host, $user, $pass, $db);
     // Check connection
 
     if ($conn->connect_error) {
@@ -362,14 +374,16 @@ if(isset($_POST["home"])){
             		<?php
             		
             		//jsfiddle.net/My7D5/ & https://www.sitepoint.com/community/t/populate-dropdown-menu-from-mysql-database/6481/7
-					$mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') 
+					/* cloud 9 $mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') */
+            		$mysqli = new mysqli('eu-cdbr-west-02.cleardb.net', 'bdff3cc89b8df5',
+            		                    '25912b2f', 'heroku_6a6bf0a23aababd')
             			or die ('Cannot connect to db');
 
     				$result = mysqli_query($mysqli, "SELECT teacherID, firstname, surname FROM teachers WHERE school = '".$_SESSION['pastSchool']."'");
     				
     				echo "<select class='form-control' name='referenceTeacher' id='mydropbox' onchange='copyValue()'>";
 					echo "<option selected value=''>Choose a teacher from your past school to reference</option>";
-					echo "<option value='NA'>No reference teachers available from my school</option>";
+					echo "<option value='4'>No reference teachers available from my school</option>";
 					
     				while ($row = $result->fetch_assoc()) {
 

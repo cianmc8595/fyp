@@ -14,14 +14,19 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   exit;
 }/* END */
         		    
-$host = "127.0.0.1";
-					$user = "cianmc85";
-					$pass = "";
-					$db = "project_db";
-					$port = 3306;
+/*$host = "127.0.0.1";
+$user = "cianmc85";
+$pass = "";
+$db = "project_db";
+$port = 3306;*/
+
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
 
 					// Create connection
-					$conn = new mysqli($host, $user, $pass, $db, $port);
+					$conn = new mysqli($host, $user, $pass, $db);
 					// Check connection
                     
 					if ($conn->connect_error) {
@@ -110,14 +115,19 @@ if(isset($_POST['send']))
     // Check input errors before inserting in database
     if(!empty($message) && empty($message_err)){
         
-        $host = "127.0.0.1";
-					$user = "cianmc85";
-					$pass = "";
-					$db = "project_db";
-					$port = 3306;
+        /*$host = "127.0.0.1";
+$user = "cianmc85";
+$pass = "";
+$db = "project_db";
+$port = 3306;*/
+
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
 
 					// Create connection
-					$conn = new mysqli($host, $user, $pass, $db, $port);
+					$conn = new mysqli($host, $user, $pass, $db);
 					// Check connection
                     
 					if ($conn->connect_error) {
@@ -159,14 +169,19 @@ if(isset($_POST['send']))
 
 if(isset($_POST['flag']))
 {
-    $host = "127.0.0.1";
-    $user = "cianmc85";
-    $pass = "";
-    $db = "project_db";
-    $port = 3306;
+    /*$host = "127.0.0.1";
+$user = "cianmc85";
+$pass = "";
+$db = "project_db";
+$port = 3306;*/
+
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
 
     // Create connection
-    $conn = new mysqli($host, $user, $pass, $db, $port);
+    $conn = new mysqli($host, $user, $pass, $db);
     // Check connection
 
     if ($conn->connect_error) {
@@ -185,11 +200,16 @@ if(isset($_POST['flag']))
             $senderUpdate = "Violation";
             
             //DB details
-            $dbHost     = '127.0.0.1';
+            /*$dbHost     = '127.0.0.1';
             $dbUsername = 'cianmc85';
             $dbPassword = '';
-            $dbName     = 'project_db';
-        
+            $dbName     = 'project_db';*/
+            
+            $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+            $dbUsername = 'bdff3cc89b8df5';
+            $dbPassword = '25912b2f';
+            $dbName     = 'heroku_6a6bf0a23aababd';
+            
             //Create connection and select DB
             $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
         
@@ -204,14 +224,19 @@ if(isset($_POST['flag']))
             if($update){
             
             
-            $host = "127.0.0.1";
-	        $user = "cianmc85";
-	        $pass = "";
-	        $db = "project_db";
-	        $port = 3306;
+            /*$host = "127.0.0.1";
+$user = "cianmc85";
+$pass = "";
+$db = "project_db";
+$port = 3306;*/
+
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
 
 	        // Create connection
-	        $conn = new mysqli($host, $user, $pass, $db, $port);
+	        $conn = new mysqli($host, $user, $pass, $db);
 	        // Check connection
                     
 		    if ($conn->connect_error) {
@@ -266,7 +291,15 @@ if(isset($_POST['deactivateTutor']))
 {
             
             //DB details
-            $dbHost     = '127.0.0.1'; $dbUsername = 'cianmc85'; $dbPassword = ''; $dbName     = 'project_db';
+            /*$dbHost     = '127.0.0.1';
+            $dbUsername = 'cianmc85';
+            $dbPassword = '';
+            $dbName     = 'project_db';*/
+            
+            $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+            $dbUsername = 'bdff3cc89b8df5';
+            $dbPassword = '25912b2f';
+            $dbName     = 'heroku_6a6bf0a23aababd';
         
             //Create connection and select DB
             $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -293,8 +326,16 @@ if(isset($_POST['deactivateStudent']))
 {
             
             //DB details
-            $dbHost     = '127.0.0.1'; $dbUsername = 'cianmc85'; $dbPassword = ''; $dbName     = 'project_db';
-        
+            /*$dbHost     = '127.0.0.1';
+            $dbUsername = 'cianmc85';
+            $dbPassword = '';
+            $dbName     = 'project_db';*/
+            
+            $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+            $dbUsername = 'bdff3cc89b8df5';
+            $dbPassword = '25912b2f';
+            $dbName     = 'heroku_6a6bf0a23aababd';
+            
             //Create connection and select DB
             $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
         
@@ -320,8 +361,16 @@ if(isset($_POST['reactivateTutor']))
 {
             
             //DB details
-            $dbHost     = '127.0.0.1'; $dbUsername = 'cianmc85'; $dbPassword = ''; $dbName     = 'project_db';
-        
+            /*$dbHost     = '127.0.0.1';
+            $dbUsername = 'cianmc85';
+            $dbPassword = '';
+            $dbName     = 'project_db';*/
+            
+            $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+            $dbUsername = 'bdff3cc89b8df5';
+            $dbPassword = '25912b2f';
+            $dbName     = 'heroku_6a6bf0a23aababd';
+            
             //Create connection and select DB
             $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
         
@@ -347,8 +396,16 @@ if(isset($_POST['reactivateStudent']))
 {
             
             //DB details
-            $dbHost     = '127.0.0.1'; $dbUsername = 'cianmc85'; $dbPassword = ''; $dbName     = 'project_db';
-        
+            /*$dbHost     = '127.0.0.1';
+            $dbUsername = 'cianmc85';
+            $dbPassword = '';
+            $dbName     = 'project_db';*/
+            
+            $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+            $dbUsername = 'bdff3cc89b8df5';
+            $dbPassword = '25912b2f';
+            $dbName     = 'heroku_6a6bf0a23aababd';
+            
             //Create connection and select DB
             $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
         
@@ -389,10 +446,15 @@ if(isset($_POST['reactivateStudent']))
        }
        
        //DB details
-        $dbHost     = '127.0.0.1';
-        $dbUsername = 'cianmc85';
-        $dbPassword = '';
-        $dbName     = 'project_db';
+        /*$dbHost     = '127.0.0.1';
+            $dbUsername = 'cianmc85';
+            $dbPassword = '';
+            $dbName     = 'project_db';*/
+            
+            $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+            $dbUsername = 'bdff3cc89b8df5';
+            $dbPassword = '25912b2f';
+            $dbName     = 'heroku_6a6bf0a23aababd';
         
         //Create connection and select DB
         $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -811,14 +873,19 @@ if(isset($_POST['reactivateStudent']))
 												<h4 class="text-center" style="position: relative; left:-50px; top: -64px;"><b>'.$_SESSION['username']. '<b></h4>
 												<h4 class="text-center" style="position: relative; left: 50px; top: -102px;"><b>'.$otherUserUsername. '<b></h4>';
 	                                
-					$host = "127.0.0.1";
-					$user = "cianmc85";
-					$pass = "";
-					$db = "project_db";
-					$port = 3306;
+					/*$host = "127.0.0.1";
+                    $user = "cianmc85";
+                    $pass = "";
+                    $db = "project_db";
+                    $port = 3306;*/
+                    
+                    $host = "eu-cdbr-west-02.cleardb.net";
+                    $user = "bdff3cc89b8df5";
+                    $pass = "25912b2f";
+                    $db = "heroku_6a6bf0a23aababd";
 
 					// Create connection
-					$conn = new mysqli($host, $user, $pass, $db, $port);
+					$conn = new mysqli($host, $user, $pass, $db);
 					// Check connection
                     
 					if ($conn->connect_error) {
@@ -896,15 +963,19 @@ if(isset($_POST['reactivateStudent']))
                                               </div>";
                                         
                                         
-					$host = "127.0.0.1";
-					$user = "cianmc85";
-					
-					$pass = "";
-					$db = "project_db";
-					$port = 3306;
+					/*$host = "127.0.0.1";
+                    $user = "cianmc85";
+                    $pass = "";
+                    $db = "project_db";
+                    $port = 3306;*/
+                    
+                    $host = "eu-cdbr-west-02.cleardb.net";
+                    $user = "bdff3cc89b8df5";
+                    $pass = "25912b2f";
+                    $db = "heroku_6a6bf0a23aababd";
 
 					// Create connection
-					$conn = new mysqli($host, $user, $pass, $db, $port);
+					$conn = new mysqli($host, $user, $pass, $db);
 					// Check connection
                     
 					if ($conn->connect_error) {

@@ -25,7 +25,9 @@ if (isset($_POST['view'])) {
     if($link === false){
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
-    $mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') 
+    /*$mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') */
+      $mysqli = new mysqli('eu-cdbr-west-02.cleardb.net', 'bdff3cc89b8df5',
+                        '25912b2f', 'heroku_6a6bf0a23aababd')
             or die ('Cannot connect to db');
 
                 $result = mysqli_query($mysqli, "SELECT * FROM CVs where cvID = '".$cvtoView."'");
@@ -44,7 +46,7 @@ elseif(isset($_POST['home'])){
                 header("location: TutorsHome.php");
 }
     
-$link = mysqli_connect("127.0.0.1", "cianmc85", "", "project_db");
+$link = mysqli_connect("eu-cdbr-west-02.cleardb.net", "bdff3cc89b8df5", "25912b2f", "heroku_6a6bf0a23aababd");
 
 if (isset($_POST['saveChanges'])) {
     
@@ -261,8 +263,10 @@ if (isset($_POST['saveChanges'])) {
                     <?php
                     
 // With help from http://jsfiddle.net/My7D5/ & https://www.sitepoint.com/community/t/populate-dropdown-menu-from-mysql-database/6481/7
-  $mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') 
-            or die ('Cannot connect to db');
+  /*$mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') */
+    $mysqli = new mysqli('eu-cdbr-west-02.cleardb.net', 'bdff3cc89b8df5',
+                        '25912b2f', 'heroku_6a6bf0a23aababd') 
+           or die ('Cannot connect to db');
 
     $result = mysqli_query($mysqli, "SELECT cvID, subject FROM CVs where tutorID = '".$_SESSION['tutorID']."'");
     
@@ -330,8 +334,10 @@ if (isset($_POST['saveChanges'])) {
             		<?php
             		
             		//jsfiddle.net/My7D5/ & https://www.sitepoint.com/community/t/populate-dropdown-menu-from-mysql-database/6481/7
-					$mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') 
-            			or die ('Cannot connect to db');
+					/*$mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') */
+            		  $mysqli = new mysqli('eu-cdbr-west-02.cleardb.net', 'bdff3cc89b8df5',
+                        '25912b2f', 'heroku_6a6bf0a23aababd') 
+            		  	or die ('Cannot connect to db');
 
     				$result = mysqli_query($mysqli, "SELECT teacherID, firstname, surname FROM teachers WHERE school = '".$_SESSION['pastSchool']."'");
     				

@@ -277,14 +277,19 @@ table {
             <div class="login-form">
             
             <?php
-$host = "127.0.0.1";
+/*$host = "127.0.0.1";
 $user = "cianmc85";
 $pass = "";
 $db = "project_db";
-$port = 3306;
+$port = 3306;*/
+
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
 
 // Create connection
-$conn = new mysqli($host, $user, $pass, $db, $port);
+$conn = new mysqli($host, $user, $pass, $db);
 // Check connection
 
 if ($conn->connect_error) {
