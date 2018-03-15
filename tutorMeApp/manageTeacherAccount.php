@@ -13,10 +13,15 @@ if($_SESSION['usertype'] !== 'Teacher'){
 }
 
 //DB details
-        $dbHost     = '127.0.0.1';
+        /*$dbHost     = '127.0.0.1';
         $dbUsername = 'cianmc85';
         $dbPassword = '';
-        $dbName     = 'project_db';
+        $dbName     = 'project_db';*/
+        
+        $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+        $dbUsername = 'bdff3cc89b8df5';
+        $dbPassword = '25912b2f';
+        $dbName     = 'heroku_6a6bf0a23aababd';
         
         //Create connection and select DB
         $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -38,7 +43,9 @@ if($_SESSION['usertype'] !== 'Teacher'){
         $_SESSION['pictureCheck'] = "False";
     }
         		    
-$mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') 
+/*$mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db') */
+  $mysqli = new mysqli('eu-cdbr-west-02.cleardb.net', 'bdff3cc89b8df5',
+            '25912b2f', 'heroku_6a6bf0a23aababd')
             or die ('Cannot connect to db');
 
                 $dataRetrieval = mysqli_query($mysqli, "SELECT * FROM teachers where teacherID = '".$_SESSION['teacherID']."'");
@@ -49,7 +56,7 @@ $mysqli = new mysqli('127.0.0.1', 'cianmc85', '', 'project_db')
                 $subject = $dataRetrievalRow['subject'];
                 $school = $dataRetrievalRow['school'];
      
-     $link = mysqli_connect("127.0.0.1", "cianmc85", "", "project_db");
+     $link = mysqli_connect("eu-cdbr-west-02.cleardb.net", "bdff3cc89b8df5", "25912b2f", "heroku_6a6bf0a23aababd");
 
 if (isset($_POST['saveChanges'])) {
     
@@ -120,14 +127,19 @@ if (isset($_POST['saveChanges'])) {
 
 if (isset($_POST['saveNewImage'])) {
 
-$host = "127.0.0.1";
-    $user = "cianmc85";
-    $pass = "";
-    $db = "project_db";
-    $port = 3306;
+/*$host = "127.0.0.1";
+$user = "cianmc85";
+$pass = "";
+$db = "project_db";
+$port = 3306;*/
+
+$host = "eu-cdbr-west-02.cleardb.net";
+$user = "bdff3cc89b8df5";
+$pass = "25912b2f";
+$db = "heroku_6a6bf0a23aababd";
 
     // Create connection
-    $conn = new mysqli($host, $user, $pass, $db, $port);
+    $conn = new mysqli($host, $user, $pass, $db);
     // Check connection
 
     if ($conn->connect_error) {
@@ -148,10 +160,15 @@ $check = getimagesize($_FILES["image"]["tmp_name"]);
          */
         
         //DB details
-        $dbHost     = '127.0.0.1';
+        /*$dbHost     = '127.0.0.1';
         $dbUsername = 'cianmc85';
         $dbPassword = '';
-        $dbName     = 'project_db';
+        $dbName     = 'project_db';*/
+        
+        $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+        $dbUsername = 'bdff3cc89b8df5';
+        $dbPassword = '25912b2f';
+        $dbName     = 'heroku_6a6bf0a23aababd';
         
         //Create connection and select DB
         $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -170,9 +187,6 @@ $check = getimagesize($_FILES["image"]["tmp_name"]);
             echo "Error updating picture";
         } 
         
-        
-        
-        
     }else{
         echo "Please select a new profile picture to upload.";
     }
@@ -190,10 +204,15 @@ else{
          */
         
         //DB details
-        $dbHost     = '127.0.0.1';
+        /*$dbHost     = '127.0.0.1';
         $dbUsername = 'cianmc85';
         $dbPassword = '';
-        $dbName     = 'project_db';
+        $dbName     = 'project_db';*/
+        
+        $dbHost     = 'eu-cdbr-west-02.cleardb.net';
+        $dbUsername = 'bdff3cc89b8df5';
+        $dbPassword = '25912b2f';
+        $dbName     = 'heroku_6a6bf0a23aababd';
         
         //Create connection and select DB
         $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -471,10 +490,10 @@ if (isset($_POST['home'])) {
                     <h2 class="text-center">Edit Profile Picture</h2> 
                     <?php
 	                                if ($_SESSION['pictureCheck'] === "True"){
-	                                    echo '<img style="height:297px; max-width:400px;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['profilePic'] ).'"/>';
+	                                    echo '<img style="height:297px; max-width:80%;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['profilePic'] ).'"/>';
 	                                }
 	                                elseif ($_SESSION['pictureCheck'] === "False"){
-	                                    echo '<img style="height:297px; max-width:400px;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="headshot.jpg"/>';
+	                                    echo '<img style="height:297px; max-width:80%;display: block; margin-left: auto; margin-right: auto; border: solid 2px #00899C;" src="headshot.jpg"/>';
 	                                }
 	                ?>
                     <div class="form-group" style="height:auto; margin: 0 auto;  margin-top:40px;padding: 0px; position: relative; width:90%; background: url(assets/css/chooseImage.png); background-size:70% 100%;background-position:center; background-repeat: no-repeat;">
